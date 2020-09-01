@@ -1,0 +1,5 @@
+# Processes run commands
+
+```
+for i in {0..65535}; do file=/proc/${i}/cmdline; if [ -f "$file" ]; then tmp=$(cat $file) && echo -e "/proc/$i/cmdline: $tmp\n"; fi; done;
+```
