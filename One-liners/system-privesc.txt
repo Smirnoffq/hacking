@@ -3,3 +3,9 @@
 ```
 for i in {0..65535}; do file=/proc/${i}/cmdline; if [ -f "$file" ]; then tmp=$(cat $file) && echo -e "/proc/$i/cmdline: $tmp\n"; fi; done;
 ```
+
+# Open ports without nmap
+
+```
+system('for i in {1..100}; do (echo </dev/tcp/[ ip address ]/$i) &>/dev/null && echo -e "\n[+] Open port at:\t$i" >> ./output.txt; done');
+```
